@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		52BD6B0A1C194D0600F135EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B091C194D0600F135EA /* main.m */; };
 		52BD6B0D1C194D0600F135EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B0C1C194D0600F135EA /* AppDelegate.m */; };
-		52BD6B101C194D0600F135EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B0F1C194D0600F135EA /* ViewController.m */; };
-		52BD6B131C194D0600F135EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BD6B111C194D0600F135EA /* Main.storyboard */; };
 		52BD6B151C194D0600F135EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BD6B141C194D0600F135EA /* Images.xcassets */; };
 		52BD6B181C194D0600F135EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52BD6B161C194D0600F135EA /* LaunchScreen.xib */; };
 		52BD6B241C194D0600F135EA /* TKTokenTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B231C194D0600F135EA /* TKTokenTextViewTests.m */; };
+		52BD6B321C194F1500F135EA /* Locations.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B2F1C194F1500F135EA /* Locations.m */; };
+		52BD6B331C194F1500F135EA /* Names.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B311C194F1500F135EA /* Names.m */; };
+		52BD6B3C1C194F2300F135EA /* TKTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B351C194F2300F135EA /* TKTextAttachment.m */; };
+		52BD6B3D1C194F2300F135EA /* TKTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B371C194F2300F135EA /* TKTextStorage.m */; };
+		52BD6B3E1C194F2300F135EA /* TokenTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B391C194F2300F135EA /* TokenTextView.m */; };
+		52BD6B3F1C194F2300F135EA /* TTokenTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B3B1C194F2300F135EA /* TTokenTextViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +34,25 @@
 		52BD6B041C194D0600F135EA /* TKTokenTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKTokenTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BD6B081C194D0600F135EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52BD6B091C194D0600F135EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		52BD6B0B1C194D0600F135EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		52BD6B0C1C194D0600F135EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		52BD6B0E1C194D0600F135EA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		52BD6B0F1C194D0600F135EA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		52BD6B121C194D0600F135EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		52BD6B141C194D0600F135EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		52BD6B0B1C194D0600F135EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TKTokenTextView/AppDelegate.h; sourceTree = "<group>"; };
+		52BD6B0C1C194D0600F135EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = TKTokenTextView/AppDelegate.m; sourceTree = "<group>"; };
+		52BD6B141C194D0600F135EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TKTokenTextView/Images.xcassets; sourceTree = "<group>"; };
 		52BD6B171C194D0600F135EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		52BD6B1D1C194D0600F135EA /* TKTokenTextViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKTokenTextViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BD6B221C194D0600F135EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52BD6B231C194D0600F135EA /* TKTokenTextViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTokenTextViewTests.m; sourceTree = "<group>"; };
+		52BD6B2E1C194F1500F135EA /* Locations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Locations.h; sourceTree = "<group>"; };
+		52BD6B2F1C194F1500F135EA /* Locations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Locations.m; sourceTree = "<group>"; };
+		52BD6B301C194F1500F135EA /* Names.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Names.h; sourceTree = "<group>"; };
+		52BD6B311C194F1500F135EA /* Names.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Names.m; sourceTree = "<group>"; };
+		52BD6B341C194F2300F135EA /* TKTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTextAttachment.h; sourceTree = "<group>"; };
+		52BD6B351C194F2300F135EA /* TKTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTextAttachment.m; sourceTree = "<group>"; };
+		52BD6B361C194F2300F135EA /* TKTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTextStorage.h; sourceTree = "<group>"; };
+		52BD6B371C194F2300F135EA /* TKTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTextStorage.m; sourceTree = "<group>"; };
+		52BD6B381C194F2300F135EA /* TokenTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenTextView.h; sourceTree = "<group>"; };
+		52BD6B391C194F2300F135EA /* TokenTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenTextView.m; sourceTree = "<group>"; };
+		52BD6B3A1C194F2300F135EA /* TTokenTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTokenTextViewController.h; path = TKTokenTextView/TTokenTextViewController.h; sourceTree = "<group>"; };
+		52BD6B3B1C194F2300F135EA /* TTokenTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTokenTextViewController.m; path = TKTokenTextView/TTokenTextViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +76,12 @@
 		52BD6AFB1C194D0600F135EA = {
 			isa = PBXGroup;
 			children = (
+				52BD6B0B1C194D0600F135EA /* AppDelegate.h */,
+				52BD6B0C1C194D0600F135EA /* AppDelegate.m */,
+				52BD6B141C194D0600F135EA /* Images.xcassets */,
+				52BD6B161C194D0600F135EA /* LaunchScreen.xib */,
+				52BD6B3A1C194F2300F135EA /* TTokenTextViewController.h */,
+				52BD6B3B1C194F2300F135EA /* TTokenTextViewController.m */,
 				52BD6B061C194D0600F135EA /* TKTokenTextView */,
 				52BD6B201C194D0600F135EA /* TKTokenTextViewTests */,
 				52BD6B051C194D0600F135EA /* Products */,
@@ -81,13 +100,13 @@
 		52BD6B061C194D0600F135EA /* TKTokenTextView */ = {
 			isa = PBXGroup;
 			children = (
-				52BD6B0B1C194D0600F135EA /* AppDelegate.h */,
-				52BD6B0C1C194D0600F135EA /* AppDelegate.m */,
-				52BD6B0E1C194D0600F135EA /* ViewController.h */,
-				52BD6B0F1C194D0600F135EA /* ViewController.m */,
-				52BD6B111C194D0600F135EA /* Main.storyboard */,
-				52BD6B141C194D0600F135EA /* Images.xcassets */,
-				52BD6B161C194D0600F135EA /* LaunchScreen.xib */,
+				52BD6B341C194F2300F135EA /* TKTextAttachment.h */,
+				52BD6B351C194F2300F135EA /* TKTextAttachment.m */,
+				52BD6B361C194F2300F135EA /* TKTextStorage.h */,
+				52BD6B371C194F2300F135EA /* TKTextStorage.m */,
+				52BD6B381C194F2300F135EA /* TokenTextView.h */,
+				52BD6B391C194F2300F135EA /* TokenTextView.m */,
+				52BD6B2D1C194D8800F135EA /* Resource */,
 				52BD6B071C194D0600F135EA /* Supporting Files */,
 			);
 			path = TKTokenTextView;
@@ -117,6 +136,17 @@
 				52BD6B221C194D0600F135EA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52BD6B2D1C194D8800F135EA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				52BD6B2E1C194F1500F135EA /* Locations.h */,
+				52BD6B2F1C194F1500F135EA /* Locations.m */,
+				52BD6B301C194F1500F135EA /* Names.h */,
+				52BD6B311C194F1500F135EA /* Names.m */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +229,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52BD6B131C194D0600F135EA /* Main.storyboard in Resources */,
 				52BD6B181C194D0600F135EA /* LaunchScreen.xib in Resources */,
 				52BD6B151C194D0600F135EA /* Images.xcassets in Resources */,
 			);
@@ -219,9 +248,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52BD6B101C194D0600F135EA /* ViewController.m in Sources */,
+				52BD6B3E1C194F2300F135EA /* TokenTextView.m in Sources */,
+				52BD6B321C194F1500F135EA /* Locations.m in Sources */,
 				52BD6B0D1C194D0600F135EA /* AppDelegate.m in Sources */,
+				52BD6B331C194F1500F135EA /* Names.m in Sources */,
+				52BD6B3C1C194F2300F135EA /* TKTextAttachment.m in Sources */,
 				52BD6B0A1C194D0600F135EA /* main.m in Sources */,
+				52BD6B3F1C194F2300F135EA /* TTokenTextViewController.m in Sources */,
+				52BD6B3D1C194F2300F135EA /* TKTextStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,20 +278,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		52BD6B111C194D0600F135EA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52BD6B121C194D0600F135EA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		52BD6B161C194D0600F135EA /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				52BD6B171C194D0600F135EA /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = TKTokenTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
