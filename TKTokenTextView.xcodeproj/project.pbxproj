@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52BD6B0A1C194D0600F135EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B091C194D0600F135EA /* main.m */; };
+		52BD6B0D1C194D0600F135EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B0C1C194D0600F135EA /* AppDelegate.m */; };
+		52BD6B101C194D0600F135EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B0F1C194D0600F135EA /* ViewController.m */; };
+		52BD6B131C194D0600F135EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BD6B111C194D0600F135EA /* Main.storyboard */; };
+		52BD6B151C194D0600F135EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BD6B141C194D0600F135EA /* Images.xcassets */; };
+		52BD6B181C194D0600F135EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52BD6B161C194D0600F135EA /* LaunchScreen.xib */; };
+		52BD6B241C194D0600F135EA /* TKTokenTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BD6B231C194D0600F135EA /* TKTokenTextViewTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52BD6B1E1C194D0600F135EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BD6AFC1C194D0600F135EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52BD6B031C194D0600F135EA;
+			remoteInfo = TKTokenTextView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52BD6B041C194D0600F135EA /* TKTokenTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKTokenTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52BD6B081C194D0600F135EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52BD6B091C194D0600F135EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		52BD6B0B1C194D0600F135EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		52BD6B0C1C194D0600F135EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		52BD6B0E1C194D0600F135EA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		52BD6B0F1C194D0600F135EA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		52BD6B121C194D0600F135EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52BD6B141C194D0600F135EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		52BD6B171C194D0600F135EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		52BD6B1D1C194D0600F135EA /* TKTokenTextViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKTokenTextViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52BD6B221C194D0600F135EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52BD6B231C194D0600F135EA /* TKTokenTextViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTokenTextViewTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52BD6B011C194D0600F135EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BD6B1A1C194D0600F135EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52BD6AFB1C194D0600F135EA = {
+			isa = PBXGroup;
+			children = (
+				52BD6B061C194D0600F135EA /* TKTokenTextView */,
+				52BD6B201C194D0600F135EA /* TKTokenTextViewTests */,
+				52BD6B051C194D0600F135EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52BD6B051C194D0600F135EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52BD6B041C194D0600F135EA /* TKTokenTextView.app */,
+				52BD6B1D1C194D0600F135EA /* TKTokenTextViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52BD6B061C194D0600F135EA /* TKTokenTextView */ = {
+			isa = PBXGroup;
+			children = (
+				52BD6B0B1C194D0600F135EA /* AppDelegate.h */,
+				52BD6B0C1C194D0600F135EA /* AppDelegate.m */,
+				52BD6B0E1C194D0600F135EA /* ViewController.h */,
+				52BD6B0F1C194D0600F135EA /* ViewController.m */,
+				52BD6B111C194D0600F135EA /* Main.storyboard */,
+				52BD6B141C194D0600F135EA /* Images.xcassets */,
+				52BD6B161C194D0600F135EA /* LaunchScreen.xib */,
+				52BD6B071C194D0600F135EA /* Supporting Files */,
+			);
+			path = TKTokenTextView;
+			sourceTree = "<group>";
+		};
+		52BD6B071C194D0600F135EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52BD6B081C194D0600F135EA /* Info.plist */,
+				52BD6B091C194D0600F135EA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52BD6B201C194D0600F135EA /* TKTokenTextViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				52BD6B231C194D0600F135EA /* TKTokenTextViewTests.m */,
+				52BD6B211C194D0600F135EA /* Supporting Files */,
+			);
+			path = TKTokenTextViewTests;
+			sourceTree = "<group>";
+		};
+		52BD6B211C194D0600F135EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52BD6B221C194D0600F135EA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52BD6B031C194D0600F135EA /* TKTokenTextView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52BD6B271C194D0600F135EA /* Build configuration list for PBXNativeTarget "TKTokenTextView" */;
+			buildPhases = (
+				52BD6B001C194D0600F135EA /* Sources */,
+				52BD6B011C194D0600F135EA /* Frameworks */,
+				52BD6B021C194D0600F135EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TKTokenTextView;
+			productName = TKTokenTextView;
+			productReference = 52BD6B041C194D0600F135EA /* TKTokenTextView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52BD6B1C1C194D0600F135EA /* TKTokenTextViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52BD6B2A1C194D0600F135EA /* Build configuration list for PBXNativeTarget "TKTokenTextViewTests" */;
+			buildPhases = (
+				52BD6B191C194D0600F135EA /* Sources */,
+				52BD6B1A1C194D0600F135EA /* Frameworks */,
+				52BD6B1B1C194D0600F135EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52BD6B1F1C194D0600F135EA /* PBXTargetDependency */,
+			);
+			name = TKTokenTextViewTests;
+			productName = TKTokenTextViewTests;
+			productReference = 52BD6B1D1C194D0600F135EA /* TKTokenTextViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52BD6AFC1C194D0600F135EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Toki;
+				TargetAttributes = {
+					52BD6B031C194D0600F135EA = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					52BD6B1C1C194D0600F135EA = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 52BD6B031C194D0600F135EA;
+					};
+				};
+			};
+			buildConfigurationList = 52BD6AFF1C194D0600F135EA /* Build configuration list for PBXProject "TKTokenTextView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52BD6AFB1C194D0600F135EA;
+			productRefGroup = 52BD6B051C194D0600F135EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52BD6B031C194D0600F135EA /* TKTokenTextView */,
+				52BD6B1C1C194D0600F135EA /* TKTokenTextViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52BD6B021C194D0600F135EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52BD6B131C194D0600F135EA /* Main.storyboard in Resources */,
+				52BD6B181C194D0600F135EA /* LaunchScreen.xib in Resources */,
+				52BD6B151C194D0600F135EA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BD6B1B1C194D0600F135EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52BD6B001C194D0600F135EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52BD6B101C194D0600F135EA /* ViewController.m in Sources */,
+				52BD6B0D1C194D0600F135EA /* AppDelegate.m in Sources */,
+				52BD6B0A1C194D0600F135EA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BD6B191C194D0600F135EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52BD6B241C194D0600F135EA /* TKTokenTextViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52BD6B1F1C194D0600F135EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52BD6B031C194D0600F135EA /* TKTokenTextView */;
+			targetProxy = 52BD6B1E1C194D0600F135EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52BD6B111C194D0600F135EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52BD6B121C194D0600F135EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52BD6B161C194D0600F135EA /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52BD6B171C194D0600F135EA /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52BD6B251C194D0600F135EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52BD6B261C194D0600F135EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52BD6B281C194D0600F135EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TKTokenTextView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		52BD6B291C194D0600F135EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TKTokenTextView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		52BD6B2B1C194D0600F135EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TKTokenTextViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TKTokenTextView.app/TKTokenTextView";
+			};
+			name = Debug;
+		};
+		52BD6B2C1C194D0600F135EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TKTokenTextViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TKTokenTextView.app/TKTokenTextView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52BD6AFF1C194D0600F135EA /* Build configuration list for PBXProject "TKTokenTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52BD6B251C194D0600F135EA /* Debug */,
+				52BD6B261C194D0600F135EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52BD6B271C194D0600F135EA /* Build configuration list for PBXNativeTarget "TKTokenTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52BD6B281C194D0600F135EA /* Debug */,
+				52BD6B291C194D0600F135EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		52BD6B2A1C194D0600F135EA /* Build configuration list for PBXNativeTarget "TKTokenTextViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52BD6B2B1C194D0600F135EA /* Debug */,
+				52BD6B2C1C194D0600F135EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52BD6AFC1C194D0600F135EA /* Project object */;
+}
