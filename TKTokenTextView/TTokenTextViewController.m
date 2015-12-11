@@ -37,7 +37,7 @@ typedef enum{
     NSLayoutManager                             *layoutManager;
     SEARCH_TYPE                                 searchFlag;
     
-    
+    UILabel                                     *coverLabel;
     float                                       textHeight;/**< textView's height */
 }
 
@@ -114,10 +114,12 @@ typedef enum{
     _tokenTextView.selectedRange = NSMakeRange(0, 0);
     [_tokenTextView setBackgroundColor:[UIColor brownColor]];
     
+    coverLabel = [UILabel new];
+    
     // delegate
     _tokenTextView.delegate = self;
     
-        [self.view addSubview:_tokenTextView];
+    [self.view addSubview:_tokenTextView];
 }
 
 - (void) tapATag {
