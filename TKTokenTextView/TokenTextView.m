@@ -8,6 +8,7 @@
 
 #import "TokenTextView.h"
 #import "TKTextAttachment.h"
+#import "Masonry.h"
 
 #define DEFAULT_TEXT_ATTRIBUTES [self setDefaultAttributes]
 #define DEFAULT_TITLE_HEIGTH                    60.0f

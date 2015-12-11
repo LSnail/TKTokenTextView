@@ -10,6 +10,7 @@
 #import "TKTextStorage.h"
 #import "TKTextAttachment.h"
 #import "TokenTextView.h"
+#import "Masonry.h"
 
 #import "Names.h"
 #import "Locations.h"
@@ -114,12 +115,10 @@ typedef enum{
     _tokenTextView.selectedRange = NSMakeRange(0, 0);
     [_tokenTextView setBackgroundColor:[UIColor brownColor]];
     
-    coverLabel = [UILabel new];
-    
     // delegate
     _tokenTextView.delegate = self;
     
-    [self.view addSubview:_tokenTextView];
+        [self.view addSubview:_tokenTextView];
 }
 
 - (void) tapATag {
