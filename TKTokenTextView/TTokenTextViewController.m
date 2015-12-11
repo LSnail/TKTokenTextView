@@ -99,10 +99,8 @@ typedef enum{
 
 - (void) setUpTokenTextView {
     
-    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:@"enter title, people and places" attributes:DEFAULT_TEXT_ATTRIBUTES];
     // parts of TextView
     textStorage = [[TKTextStorage alloc] init];
-    [textStorage setAttributedString:attributedString];
     layoutManager = [[NSLayoutManager alloc] init];
     CGRect textVeiwRect = CGRectMake(0, 64, self.view.bounds.size.width, DEFAULT_TITLE_HEIGTH);
     NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:CGSizeMake(textVeiwRect.size.width, CGFLOAT_MAX)];
@@ -114,15 +112,27 @@ typedef enum{
     _tokenTextView.typingAttributes = DEFAULT_TEXT_ATTRIBUTES;
     _tokenTextView.selectedRange = NSMakeRange(0, 0);
     [_tokenTextView setBackgroundColor:[UIColor brownColor]];
-    
     // delegate
     _tokenTextView.delegate = self;
-    
-        [self.view addSubview:_tokenTextView];
+    [self.view addSubview:_tokenTextView];
+   
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:@"enter title, people and places" attributes:DEFAULT_TEXT_ATTRIBUTES];
+    coverLabel.attributedText = attributedString;
+    [self.view addSubview:coverLabel];
 }
 
-- (void) tapATag {
-    
+- (void) addConstraintsToController {
+    [_tokenTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).with.offset(64);
+        make.left.and.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(DEFAULT_TITLE_HEIGTH);
+    }];
+    [coverLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).with.offset(64);
+        make.left.and.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(DEFAULT_TITLE_HEIGTH);
+    }];
+
 }
 
 - (void) setUpResultTableView {
