@@ -66,18 +66,12 @@ typedef enum{
     [self setUpResultTableView];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    searchFlag = SEARCH_LOCATION;
+    searchFlag = SEARCH_NONE;
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 80, 40)];
-    [button addTarget:self action:@selector(clickButton) forControlEvents:UIControlEventTouchDown];
-    [button setBackgroundColor:[UIColor lightGrayColor]];
-    [button setTitle:@"done" forState:UIControlStateNormal];
-    [self.view addSubview:button];
+    [self addConstraintsToController];
+    
 }
 
-- (void) clickButton {
-    [_tokenTextView clearAllTags];
-}
 
 // --------------------------------------------
 #pragma mark - setUps -
@@ -111,13 +105,15 @@ typedef enum{
     //_tokenTextView.font = [UIFont systemFontOfSize:40];
     _tokenTextView.typingAttributes = DEFAULT_TEXT_ATTRIBUTES;
     _tokenTextView.selectedRange = NSMakeRange(0, 0);
-    [_tokenTextView setBackgroundColor:[UIColor brownColor]];
+    [_tokenTextView setBackgroundColor:[UIColor blackColor]];
     // delegate
     _tokenTextView.delegate = self;
     [self.view addSubview:_tokenTextView];
    
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:@"enter title, people and places" attributes:DEFAULT_TEXT_ATTRIBUTES];
+    coverLabel = [[UILabel alloc] init];
     coverLabel.attributedText = attributedString;
+    coverLabel.backgroundColor = [UIColor grayColor];
     [self.view addSubview:coverLabel];
 }
 
@@ -132,7 +128,7 @@ typedef enum{
         make.left.and.right.mas_equalTo(self.view);
         make.height.mas_equalTo(DEFAULT_TITLE_HEIGTH);
     }];
-
+    
 }
 
 - (void) setUpResultTableView {
@@ -154,10 +150,19 @@ typedef enum{
 // --------------------------------------------
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-
+    coverLabel.hidden = YES;
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
+    if (textView.text.length <= 0) {
+        coverLabel.hidden = NO;
+        [_tokenTextView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.view).with.offset(64);
+            make.left.and.right.mas_equalTo(self.view);
+            make.height.mas_equalTo(DEFAULT_TITLE_HEIGTH);
+
+        }];
+    }
     [_tokenTextView resignFirstResponder];
 }
 
@@ -254,13 +259,13 @@ typedef enum{
     NSString *selectedText = [NSString new];
     if (searchFlag == SEARCH_LOCATION) {
         selectedText = self.locationsArray[indexPath.row];
+    }else if (searchFlag == SEARCH_FRIEND) {
+        selectedText = self.inviteesArray[indexPath.row];
     }
     
     [_tokenTextView addTagWithString:selectedText andId:[NSString stringWithFormat:@"%d",_idCount++] andType:@"location"];
 
     [_tokenTextView setNeedsDisplay];
-    
-    
 }
 
 
