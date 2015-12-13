@@ -37,9 +37,10 @@ typedef enum{
     TKTextStorage                               *textStorage;
     NSLayoutManager                             *layoutManager;
     SEARCH_TYPE                                 searchFlag;
-    
     UILabel                                     *coverLabel;
     float                                       textHeight;/**< textView's height */
+    
+    int                                         idCount;
 }
 
 @property (nonatomic,strong) TokenTextView      *tokenTextView;
@@ -52,7 +53,6 @@ typedef enum{
 @property (nonatomic,strong) NSMutableArray     *inviteesArray;
 @property (nonatomic,strong) NSMutableArray     *locationsArray;
 
-@property (nonatomic,assign) int idCount;
 @end
 
 @implementation TTokenTextViewController
@@ -90,7 +90,6 @@ typedef enum{
 }
 
 
-
 - (void) setUpTokenTextView {
     
     // parts of TextView
@@ -106,6 +105,8 @@ typedef enum{
     _tokenTextView.typingAttributes = DEFAULT_TEXT_ATTRIBUTES;
     _tokenTextView.selectedRange = NSMakeRange(0, 0);
     [_tokenTextView setBackgroundColor:[UIColor blackColor]];
+    _tokenTextView.returnKeyType = UIReturnKeyDone;
+    _tokenTextView.keyboardAppearance = UIKeyboardAppearanceAlert;
     // delegate
     _tokenTextView.delegate = self;
     [self.view addSubview:_tokenTextView];
@@ -151,6 +152,7 @@ typedef enum{
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     coverLabel.hidden = YES;
+    // 在这里调整限制什么的
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
@@ -196,7 +198,7 @@ typedef enum{
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
     if ([text isEqualToString:@"\n"]) {
-        [_tokenTextView clearAllTags];
+        [self getSelectedContext];
         [_tokenTextView resignFirstResponder];
         return NO;
     }
@@ -217,13 +219,13 @@ typedef enum{
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section  {
-    if (searchFlag == SEARCH_FRIEND) {
+    if (searchFlag == SEARCH_FRIEND)
         return self.inviteesArray.count;
-    }else if (searchFlag == SEARCH_LOCATION) {
+    else if (searchFlag == SEARCH_LOCATION)
         return self.locationsArray.count;
-    }else {
+    else
         return 0;
-    }
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -263,7 +265,7 @@ typedef enum{
         selectedText = self.inviteesArray[indexPath.row];
     }
     
-    [_tokenTextView addTagWithString:selectedText andId:[NSString stringWithFormat:@"%d",_idCount++] andType:@"location"];
+    [_tokenTextView addTagWithString:selectedText andId:[NSString stringWithFormat:@"%d",idCount++] andType:@"location"];
 
     [_tokenTextView setNeedsDisplay];
 }
@@ -274,15 +276,9 @@ typedef enum{
 #pragma mark - Tag Methods -
 // --------------------------------------------
 
-
-
-
-// --------------------------------------------
-#pragma mark - Layout -
-// --------------------------------------------
-
-
-
+- (void)getSelectedContext {
+    [self.tokenTextView clearAllTags];
+}
 
 #pragma mark - Keyboard show or hide Notification
 - (void)viewDidAppear:(BOOL)animated

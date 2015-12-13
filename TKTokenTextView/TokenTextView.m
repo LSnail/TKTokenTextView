@@ -21,7 +21,7 @@
 
 @property (nonatomic,strong) UIImageView    *highlightedTagView;
 @property (nonatomic,assign) NSRange        shouldDeleteTagRange;
-@property (nonatomic,strong) NSMutableArray *tagList;/**< 用来保存所有tag对象的array */
+@property (nonatomic,strong) NSMutableArray *tagList;/**< an array that keeps all the tags' ID */
 
 @end
 
@@ -61,10 +61,12 @@
 // --------------------------------------------
 #pragma mark - Tag Methods -
 // --------------------------------------------
-
+/**
+ *  check all the tag, and then add their IDs to the tagList
+ */
 - (void) calculateAll {
     NSMutableArray *tmpArr = [NSMutableArray arrayWithCapacity:0];
-    for (int i=0; i<5; i++) {
+    for (int i=0; i<self.tagList.count + 20; i++) {
         if ([self attachmentExistsWithIdentifier:[NSString stringWithFormat:@"%d",i]]) {
             [tmpArr addObject:[NSString stringWithFormat:@"%d",i]];
         }
@@ -73,8 +75,13 @@
     self.tagList = [[set allObjects] copy];
     //NSLog(@"%@",self.tagList);
 }
-
-
+/**
+ *  add a tag with parameters
+ *
+ *  @param string   tag's title
+ *  @param idString tag's id, it's the only one
+ *  @param type     can add different tags with different types
+ */
 - (void)addTagWithString:(NSString *)string andId:(NSString *)idString andType:(NSString *)type{
      _blank = [[NSAttributedString alloc] initWithString:@" " attributes:DEFAULT_TEXT_ATTRIBUTES];
     
@@ -90,12 +97,17 @@
     [str appendAttributedString:text];
     //[str insertAttributedString:text atIndex:_tokenTextView.selectedRange.location];
     NSLog(@"added a tag  name:%@, id:%@, type:%@",aTag.theName,aTag.theId,aTag.type);
-    
     [str appendAttributedString:_blank];
  
     self.attributedText=str;
 }
-
+/**
+ *  set a tag's background image for normal state
+ *
+ *  @param text tag's titile
+ *
+ *  @return background image
+ */
 - (UIImage *)setTagImageWithText:(NSString *)text {
     
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -113,7 +125,13 @@
     UIGraphicsEndImageContext();
     return image;
 }
-
+/**
+ *  set a tag's background image for selected/highlighted state
+ *
+ *  @param text tag's title
+ *
+ *  @return highlighted image
+ */
 - (UIImage *)setSelectedTagImageWithText:(NSString *)text {
     
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -131,7 +149,9 @@
     UIGraphicsEndImageContext();
     return image;
 }
-
+/**
+ *  check all the attributed string with a tag's id. if a tag with this id exists, return the tag's range, else return a empty range.
+ */
 - (NSRange) tagRangeForIdentifier:(NSString *)identifier {
     __block NSRange resultRange = NSMakeRange(0, 0);
     NSRange limitRange = NSMakeRange(0, [self.attributedText length]);
@@ -148,11 +168,12 @@
 }
 
 /**
- *  点击事件和搜索均需此方法
+ *  check a tag with it's ID, and return it's frame
+ *  search a tag or select a tag would allocate this method
  *
  *  @param identifier ID
  *
- *  @return Tag的Rect
+ *  @return a tag's rect
  */
 - (CGRect) frameOfTagForIdentifier:(NSString *)identifier {
     __block CGRect result = CGRectMake(0, 0, 0, 0);
@@ -173,11 +194,6 @@
                     result.origin.y += (result.size.height - textAttachment.expectedSize.height);
                     result.size.height -= (result.size.height - textAttachment.expectedSize.height);
                 }
-//                NSDictionary *dicAttr = [[NSDictionary alloc ]init];
-//                dicAttr = [self.attributedText attributesAtIndex:range.location effectiveRange:nil];
-//                
-//                [_tagsAttris addObject:dicAttr];
-//                NSLog(@"====%@",dicAttr);
                 *stop = YES;
             }
         }
@@ -185,8 +201,9 @@
     
     return result;
 }
-
-
+/**
+ *  check wehter a tag with this ID exists. return YES if the tag exists.
+ */
 - (BOOL) attachmentExistsWithIdentifier:(NSString *)identifier {
     __block BOOL result = NO;
     
@@ -202,8 +219,11 @@
     }];
     return result;
 }
-
-
+/**
+ *  when we tap at screen, we wanna konw wether the point we tap is in a tag's frame. If taping a tag, returns a tag object, else return nil.
+ *
+ *  @param point tap point
+ */
 - (TKTextAttachment *) attachmentAtPoint:(CGPoint)point {
     NSTextContainer *textContainer = self.textContainer;
     NSLayoutManager *layoutManager = self.layoutManager;
@@ -231,8 +251,6 @@
 
 - (void)textViewDidChange:(UITextView *)textView {
     [_highlightedTagView removeFromSuperview];
-    //NSLog(@"current text is:%@",self.attributedText.string);
-    
     [self calculateAll];
 }
 
@@ -283,13 +301,10 @@
                         self.attributedText = [self attributedStringShouldReplaceRange:_shouldDeleteTagRange withTargetString:text];
                         self.selectedRange = NSMakeRange(_shouldDeleteTagRange.location, 0);
                         _shouldDeleteTagRange = NSMakeRange(0, 0);
-                        
                     }
                 }
             }];
-
         }
-        
     }
     return YES;
 }
@@ -297,10 +312,15 @@
 - (void)clearAll {
     self.attributedText = _blank;
 }
-
+/**
+ *  allocate this method will clear all tags and leaving attributed string as same as tags' title instead of them.
+ */
 - (void) clearAllTags {
-
-    for (int i = 0; i <= self.tagList.count + 1; i++) {
+    if (_highlightedTagView) {
+        [_highlightedTagView removeFromSuperview];
+    }
+    
+    for (int i = 0; i <= self.tagList.count +20; i++) {
         NSRange limitRange = NSMakeRange(0, [self.attributedText length]);
         __block NSRange shouldReplaceRange = NSMakeRange(0, 0);
         [self.attributedText enumerateAttribute:NSAttachmentAttributeName inRange:limitRange options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(TKTextAttachment *attachment, NSRange range, BOOL *stop) {
@@ -314,17 +334,19 @@
         }];
     }
 }
-
+/**
+ *   Cut out string of range on full stringto get head + tail without middle
+ *
+ *  @param cuttingRange middle range will be cutted
+ */
 - (NSAttributedString *) attributedStringWithCutOutOfRange:(NSRange)cuttingRange
 {
-    // Cut out string of range on full stringto get head + tail without middle
     // Cutting Heads
     NSAttributedString *head = nil;
     if (cuttingRange.location > 0 && cuttingRange.length > 0)
         head = [self.attributedText attributedSubstringFromRange:NSMakeRange(0, cuttingRange.location-1)];
     else
         head = [[NSMutableAttributedString alloc] initWithString:@"" attributes:DEFAULT_TEXT_ATTRIBUTES];
-    
     // Cutting Tail
     NSAttributedString *tail = nil;
     if (cuttingRange.location + cuttingRange.length <= self.attributedText.string.length)
@@ -338,7 +360,12 @@
     
     return conts;
 }
-
+/**
+ *  Replace the string of range with a tagrget string on full
+ *
+ *  @param cuttingRange would be replaced range
+ *  @param targetString target string
+ */
 - (NSAttributedString *) attributedStringShouldReplaceRange:(NSRange)cuttingRange withTargetString:(NSString *)targetString
 {
     NSAttributedString *head = nil;
@@ -346,7 +373,6 @@
         head = [self.attributedText attributedSubstringFromRange:NSMakeRange(0, cuttingRange.location-1)];
     else
         head = [[NSMutableAttributedString alloc] initWithString:@"" attributes:DEFAULT_TEXT_ATTRIBUTES];
-    
     // Cutting Tail
     NSAttributedString *tail = nil;
     if (cuttingRange.location + cuttingRange.length <= self.attributedText.string.length)
@@ -368,6 +394,7 @@
 
 - (BOOL) gestureRecognizer:(UIGestureRecognizer *)recognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     // If we're touching an attachment then we don't want the normal selection functionality to be done
+    // Let's make some animations!
     CGPoint point = [recognizer locationInView:self];
     TKTextAttachment *attachment = [self attachmentAtPoint:point];
     if (attachment) {
@@ -388,22 +415,17 @@
         scaleAnimation.toValue = [NSValue valueWithCATransform3D:CATransform3DRotate(_highlightedTagView.layer.transform, 0.03, 0.0, 0.0, 0.03)];
         [_highlightedTagView.layer addAnimation:scaleAnimation forKey:@"wiggle"];
         
-        
-        // --------------------------------------------
         NSRange range = [self tagRangeForIdentifier:attachment.theId];
         _shouldDeleteTagRange = NSMakeRange(range.location ,range.length + 1);
         self.selectedRange = NSMakeRange(range.location, 0);
         NSLog(@"selected tag's range is :(%lu,%lu)",range.location,range.length);
-        // --------------------------------------------
-
     }else {
         [_highlightedTagView removeFromSuperview];
         _shouldDeleteTagRange = NSMakeRange(0, 0);
     }
     return YES;
-    
 }
-
+// MARK: PreformAction
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     return NO;
 }

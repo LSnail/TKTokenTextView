@@ -119,7 +119,6 @@
 				52BD6B161C194D0600F135EA /* LaunchScreen.xib */,
 				52BD6B3A1C194F2300F135EA /* TTokenTextViewController.h */,
 				52BD6B3B1C194F2300F135EA /* TTokenTextViewController.m */,
-				52BD6DB51C1A6A9D00F135EA /* Masonry */,
 				52BD6B061C194D0600F135EA /* TKTokenTextView */,
 				52BD6B201C194D0600F135EA /* TKTokenTextViewTests */,
 				52BD6B051C194D0600F135EA /* Products */,
@@ -153,6 +152,7 @@
 		52BD6B071C194D0600F135EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52BD6DB51C1A6A9D00F135EA /* Masonry */,
 				52BD6B081C194D0600F135EA /* Info.plist */,
 				52BD6B091C194D0600F135EA /* main.m */,
 			);
@@ -217,8 +217,7 @@
 				52BD6DCE1C1A6A9D00F135EA /* ViewController+MASAdditions.h */,
 				52BD6DCF1C1A6A9D00F135EA /* ViewController+MASAdditions.m */,
 			);
-			name = Masonry;
-			path = TKTokenTextView/Masonry;
+			path = Masonry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

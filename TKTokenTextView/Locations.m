@@ -16,7 +16,7 @@
             @"Xian Station",
             @"Shanghai",
             @"Guang zhou",
-            @"McDownloads''",
+            @"McDownoads'",
             nil];
 
 }
