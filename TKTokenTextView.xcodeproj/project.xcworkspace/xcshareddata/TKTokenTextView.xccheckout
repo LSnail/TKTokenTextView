@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>572B2B2E-A444-4877-B32C-A2C92CAD710B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>TKTokenTextView</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>4A3FC4BD190259D36336AF50F180ADF7178FD353</key>
 		<string>https://github.com/HanChiiOS/TKTokenTextView.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TKTokenTextView.xcodeproj/project.xcworkspace</string>
+	<string>TKTokenTextView.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4A3FC4BD190259D36336AF50F180ADF7178FD353</key>

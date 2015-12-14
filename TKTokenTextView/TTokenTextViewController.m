@@ -45,8 +45,7 @@ typedef enum{
 
 @property (nonatomic,strong) TokenTextView      *tokenTextView;
 @property (nonatomic,strong) UITableView        *resultTableView;
-
-@property (nonatomic,strong) NSAttributedString *blank;
+@property (nonatomic,strong) NSAttributedString *blank;/**< just a blank for placehold */
 @property (nonatomic,strong) NSMutableArray     *locTagsArray;/**< current all locTags */
 @property (nonatomic,strong) NSMutableArray     *invTagsArray;/**< current all invTags */
 
